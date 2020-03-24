@@ -49,6 +49,30 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *   &lt;property name=&quot;max&quot; value=&quot;3&quot;/&gt;
  * &lt;/module&gt;
  * </pre>
+ * <p>Violation</p>
+ * <pre>
+ * if(condition 1){
+ *     if(condition 2){
+ *         if(condition 3){
+ *             if(condition 4){
+ *                 if(condition 5){ //Violation
+ *                 }
+ *             }
+ *         }
+ *     }
+ * }
+ * </pre>
+ * <p>acceptable code</p>
+ * <pre>
+ * if(condition 1){
+ *     if(condition 2){
+ *         if(condition 3){
+ *             if(condition 4){ //OK
+ *             }
+ *         }
+ *     }
+ * }
+ * </pre>
  *
  * @since 3.2
  */
